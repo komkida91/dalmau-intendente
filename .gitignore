@@ -5,6 +5,8 @@
 *.sh
 !deploy-prod.yml
 !deploy-staging.yml
+!levantar-pruebas.sh
+!detener-pruebas.sh
 
 # Archivos de backup
 *.backup
@@ -56,6 +58,11 @@ NOTAS.md
 TODO.md
 PRIVADO.md
 *.personal
+
+# Archivos de contraseñas (NUNCA subir)
+CLIENTES-PASSWORDS.md
+*PASSWORD*.md
+*password*.md
 
 # Archivos de test que no se usan en producción
 test/
