@@ -15,7 +15,7 @@
     /* === HEADER FIJO === */
     .header {
       background: white;
-      padding: 15px 0;
+      padding: 10px 0;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: fixed;
       top: 0;
@@ -26,33 +26,33 @@
     .header .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 30px;
+      padding: 0 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
-    .logo { font-size: 1.2rem; font-weight: bold; color: #2c3e50; text-transform: uppercase; letter-spacing: 2px; }
-    .nav { display: flex; gap: 30px; list-style: none; }
-    .nav a { text-decoration: none; color: #2c3e50; font-size: 0.95rem; transition: color 0.2s; }
+    .logo { font-size: 1rem; font-weight: bold; color: #2c3e50; text-transform: uppercase; letter-spacing: 1px; }
+    .nav { display: flex; gap: 15px; list-style: none; }
+    .nav a { text-decoration: none; color: #2c3e50; font-size: 0.9rem; transition: color 0.2s; }
     .nav a:hover { color: #e74c3c; }
-    .header-actions { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
+    .header-actions { display: flex; gap: 10px; align-items: center; flex-wrap: nowrap; }
     .btn-subscribe {
       background: transparent;
       color: #e74c3c;
-      padding: 8px 20px;
+      padding: 6px 15px;
       text-decoration: none;
       border: 2px solid #e74c3c;
       border-radius: 3px;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-weight: bold;
       white-space: nowrap;
       transition: all 0.3s ease;
     }
     .btn-subscribe:hover { background: #e74c3c; color: white; }
 
-    /* === ESPACIADO PARA COMPENSAR HEADER === */
-    .page-content { padding-top: 90px; }
+    /* === ESPACIADO PARA EL HEADER FIJO === */
+    .page-content { padding-top: 70px; }
 
     /* === SECCIONES === */
     .hero {
@@ -70,7 +70,7 @@
       opacity: 0.9;
     }
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3.2rem;
       font-weight: normal;
       margin-bottom: 40px;
       line-height: 1.2;
@@ -182,17 +182,26 @@
 
     /* === RESPONSIVE === */
     @media (max-width: 768px) {
-      .header .container { flex-direction: column; padding: 10px 20px; gap: 10px; }
-      .logo { text-align: center; width: 100%; font-size: 1rem; }
-      .nav { flex-direction: column; width: 100%; gap: 8px; text-align: center; }
-      .nav a { display: block; padding: 8px; font-size: 0.9rem; }
-      .header-actions { flex-direction: column; width: 100%; gap: 8px; }
-      .btn-subscribe { width: 100%; padding: 10px; font-size: 0.85rem; }
+      .header .container {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+      .nav {
+        flex-direction: row;
+        gap: 12px;
+      }
+      .nav a { font-size: 0.85rem; }
+      .logo { font-size: 0.9rem; }
+      .btn-subscribe {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+      }
+      .page-content { padding-top: 65px; }
       .hero h1 { font-size: 1.8rem; }
-      .page-content { padding-top: 130px; } /* más alto en móvil */
     }
 
     @media (max-width: 480px) {
+      .nav a { font-size: 0.8rem; }
       .hero h1 { font-size: 1.5rem; }
       .hero-flag { font-size: 1.5rem; }
       .get-on-board h2, .propuestas h2, .contact h2 { font-size: 1.5rem; }
@@ -202,14 +211,14 @@
 <body>
   <div class="header">
     <div class="container">
-      <div class="logo">Dalmau Intendente</div>
+      <div class="logo">Dalmau</div>
       <ul class="nav">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#propuestas">Propuestas</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
       <div class="header-actions">
-        <a href="#suscribirse" class="btn-subscribe">SUSCRIBIRSE</a>
+        <a href="#suscribirse" class="btn-subscribe">Suscribirse</a>
       </div>
     </div>
   </div>
@@ -316,17 +325,11 @@
   </button>
 
   <script>
-    // Mostrar/ocultar botón según scroll
     window.addEventListener('scroll', function() {
       const scrollBtn = document.getElementById('scrollToTop');
-      if (window.scrollY > 300) {
-        scrollBtn.classList.add('show');
-      } else {
-        scrollBtn.classList.remove('show');
-      }
+      if (window.scrollY > 300) scrollBtn.classList.add('show');
+      else scrollBtn.classList.remove('show');
     });
-
-    // Scroll suave
     document.getElementById('scrollToTop').addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
