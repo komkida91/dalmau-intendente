@@ -12,15 +12,15 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Georgia, serif; color: #333; line-height: 1.6; }
 
-    /* ==== HEADER FIJO ==== */
+    /* === HEADER FIJO === */
     .header {
       background: white;
-      padding: 20px 0;
+      padding: 15px 0;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: fixed;
-      width: 100%;
       top: 0;
       left: 0;
+      width: 100%;
       z-index: 1000;
     }
     .header .container {
@@ -34,28 +34,27 @@
     }
     .logo { font-size: 1.2rem; font-weight: bold; color: #2c3e50; text-transform: uppercase; letter-spacing: 2px; }
     .nav { display: flex; gap: 30px; list-style: none; }
-    .nav a { text-decoration: none; color: #2c3e50; font-size: 0.95rem; }
+    .nav a { text-decoration: none; color: #2c3e50; font-size: 0.95rem; transition: color 0.2s; }
+    .nav a:hover { color: #e74c3c; }
     .header-actions { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
     .btn-subscribe {
       background: transparent;
       color: #e74c3c;
-      padding: 10px 25px;
+      padding: 8px 20px;
       text-decoration: none;
       border: 2px solid #e74c3c;
       border-radius: 3px;
       font-size: 0.9rem;
       font-weight: bold;
       white-space: nowrap;
+      transition: all 0.3s ease;
     }
+    .btn-subscribe:hover { background: #e74c3c; color: white; }
 
-    /* Compensar altura del header */
-    body::before {
-      content: "";
-      display: block;
-      height: 90px; /* Altura del header */
-    }
+    /* === ESPACIADO PARA COMPENSAR HEADER === */
+    .page-content { padding-top: 90px; }
 
-    /* ==== SECCIONES ==== */
+    /* === SECCIONES === */
     .hero {
       background: linear-gradient(135deg, #3b5998 0%, #2c3e50 100%);
       color: white;
@@ -140,7 +139,7 @@
 
     .footer { background: #1a1a1a; color: white; text-align: center; padding: 30px; }
 
-    /* ==== BOTONES FLOTANTES ==== */
+    /* === BOTONES FLOTANTES === */
     .whatsapp-float {
       position: fixed;
       bottom: 30px;
@@ -179,19 +178,18 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
     .scroll-to-top.show { opacity: 1; visibility: visible; }
-    .scroll-to-top:hover { background: #2c3e50; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
+    .scroll-to-top:hover { background: #2c3e50; transform: translateY(-3px); }
 
-    /* ==== RESPONSIVE ==== */
+    /* === RESPONSIVE === */
     @media (max-width: 768px) {
-      .header .container { flex-direction: column; padding: 15px 20px; gap: 12px; }
+      .header .container { flex-direction: column; padding: 10px 20px; gap: 10px; }
       .logo { text-align: center; width: 100%; font-size: 1rem; }
-      .nav { flex-direction: column; width: 100%; gap: 10px; text-align: center; }
-      .nav li { width: 100%; }
-      .nav a { display: block; padding: 10px; font-size: 0.9rem; }
-      .header-actions { flex-direction: column; width: 100%; gap: 10px; }
-      .btn-subscribe { width: 100%; padding: 12px; font-size: 0.85rem; }
+      .nav { flex-direction: column; width: 100%; gap: 8px; text-align: center; }
+      .nav a { display: block; padding: 8px; font-size: 0.9rem; }
+      .header-actions { flex-direction: column; width: 100%; gap: 8px; }
+      .btn-subscribe { width: 100%; padding: 10px; font-size: 0.85rem; }
       .hero h1 { font-size: 1.8rem; }
-      body::before { height: 120px; } /* header más alto en móvil */
+      .page-content { padding-top: 130px; } /* más alto en móvil */
     }
 
     @media (max-width: 480px) {
@@ -216,102 +214,103 @@
     </div>
   </div>
 
-  <div class="hero" id="inicio">
-    <div class="hero-flag">🇦🇷</div>
-    <div class="hero-subtitle">Un Futuro Mejor</div>
-    <h1>Construyamos Juntos<br>Una Ciudad para Todos</h1>
-    <div class="hero-social">
-      <a href="https://facebook.com/dalmau" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://twitter.com/dalmau" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com/dalmau" target="_blank"><i class="fab fa-instagram"></i></a>
+  <div class="page-content">
+    <div class="hero" id="inicio">
+      <div class="hero-flag">🇦🇷</div>
+      <div class="hero-subtitle">Un Futuro Mejor</div>
+      <h1>Construyamos Juntos<br>Una Ciudad para Todos</h1>
+      <div class="hero-social">
+        <a href="https://facebook.com/dalmau" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/dalmau" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/dalmau" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
     </div>
-  </div>
 
-  <div class="get-on-board">
-    <h2>Sé Parte del Cambio</h2>
-    <div class="actions-grid">
-      <div class="action-card">
-        <i class="fas fa-hand-holding-heart"></i>
-        <h4>Voluntariado</h4>
-        <p>Únete a nuestro equipo</p>
-      </div>
-      <div class="action-card">
-        <i class="fas fa-bullhorn"></i>
-        <h4>Difunde</h4>
-        <p>Comparte en redes</p>
-      </div>
-      <div class="action-card">
-        <i class="fas fa-envelope"></i>
-        <h4>Infórmate</h4>
-        <p>Suscríbete al boletín</p>
+    <div class="get-on-board">
+      <h2>Sé Parte del Cambio</h2>
+      <div class="actions-grid">
+        <div class="action-card">
+          <i class="fas fa-hand-holding-heart"></i>
+          <h4>Voluntariado</h4>
+          <p>Únete a nuestro equipo</p>
+        </div>
+        <div class="action-card">
+          <i class="fas fa-bullhorn"></i>
+          <h4>Difunde</h4>
+          <p>Comparte en redes</p>
+        </div>
+        <div class="action-card">
+          <i class="fas fa-envelope"></i>
+          <h4>Infórmate</h4>
+          <p>Suscríbete al boletín</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="propuestas" id="propuestas">
-    <h2>Nuestras Propuestas</h2>
-    <div class="propuestas-grid">
-      <div class="propuesta-card">
-        <i class="fas fa-heart"></i>
-        <h3>Salud</h3>
-        <p>Acceso universal a servicios de salud</p>
-      </div>
-      <div class="propuesta-card">
-        <i class="fas fa-graduation-cap"></i>
-        <h3>Educación</h3>
-        <p>Inversión en infraestructura</p>
-      </div>
-      <div class="propuesta-card">
-        <i class="fas fa-briefcase"></i>
-        <h3>Trabajo</h3>
-        <p>Generación de empleo</p>
-      </div>
-      <div class="propuesta-card">
-        <i class="fas fa-leaf"></i>
-        <h3>Ambiente</h3>
-        <p>Ciudad sustentable</p>
-      </div>
-      <div class="propuesta-card">
-        <i class="fas fa-shield-alt"></i>
-        <h3>Seguridad</h3>
-        <p>Prevención comunitaria</p>
-      </div>
-      <div class="propuesta-card">
-        <i class="fas fa-home"></i>
-        <h3>Vivienda</h3>
-        <p>Acceso a vivienda digna</p>
+    <div class="propuestas" id="propuestas">
+      <h2>Nuestras Propuestas</h2>
+      <div class="propuestas-grid">
+        <div class="propuesta-card">
+          <i class="fas fa-heart"></i>
+          <h3>Salud</h3>
+          <p>Acceso universal a servicios de salud</p>
+        </div>
+        <div class="propuesta-card">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Educación</h3>
+          <p>Inversión en infraestructura</p>
+        </div>
+        <div class="propuesta-card">
+          <i class="fas fa-briefcase"></i>
+          <h3>Trabajo</h3>
+          <p>Generación de empleo</p>
+        </div>
+        <div class="propuesta-card">
+          <i class="fas fa-leaf"></i>
+          <h3>Ambiente</h3>
+          <p>Ciudad sustentable</p>
+        </div>
+        <div class="propuesta-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Seguridad</h3>
+          <p>Prevención comunitaria</p>
+        </div>
+        <div class="propuesta-card">
+          <i class="fas fa-home"></i>
+          <h3>Vivienda</h3>
+          <p>Acceso a vivienda digna</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="contact" id="contacto">
-    <h2>Contactanos</h2>
-    <div class="contact-methods">
-      <div class="contact-item">
-        <i class="fas fa-envelope"></i>
-        <a href="mailto:contacto@dalmau.com">contacto@dalmau.com</a>
+    <div class="contact" id="contacto">
+      <h2>Contactanos</h2>
+      <div class="contact-methods">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:contacto@dalmau.com">contacto@dalmau.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+54 9 11 1234-5678</span>
+        </div>
       </div>
-      <div class="contact-item">
-        <i class="fas fa-phone"></i>
-        <span>+54 9 11 1234-5678</span>
+      <div class="social-links">
+        <a href="https://facebook.com/dalmau" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/dalmau" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/dalmau" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
-    <div class="social-links">
-      <a href="https://facebook.com/dalmau" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://twitter.com/dalmau" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com/dalmau" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div>
 
-  <div class="footer">
-    <p>&copy; 2024 Dalmau Intendente</p>
+    <div class="footer">
+      <p>&copy; 2024 Dalmau Intendente</p>
+    </div>
   </div>
 
   <a href="https://wa.me/5491112345678" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- Botón Scroll to Top -->
   <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba">
     <i class="fas fa-arrow-up"></i>
   </button>
@@ -327,7 +326,7 @@
       }
     });
 
-    // Scroll suave al hacer clic
+    // Scroll suave
     document.getElementById('scrollToTop').addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
