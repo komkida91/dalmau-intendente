@@ -52,6 +52,18 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Georgia, serif; color: #333; line-height: 1.6; }
 
+    .gkachele-watermark {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      border: 0;
+      white-space: nowrap;
+    }
+
     /* === HEADER FIJO === */
     .header {
       background: white;
@@ -369,9 +381,9 @@
 
     <div class="footer">
       <p>&copy; 2025 Dalmau Intendente. Todos los derechos reservados.</p>
-      <p style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); margin-top: 0.5rem;">
-        Desarrollado desde noviembre 2025 por <strong style="color: #ffffff;">GKACHELE</strong>
-      </p>
+      <span class="gkachele-watermark" aria-hidden="true">
+        Desarrollado desde noviembre 2025 por GKACHELE
+      </span>
       <p style="font-size: 0.7rem; color: rgba(255, 255, 255, 0.5); margin-top: 0.25rem; opacity: 0.7;">
         Código propiedad de GKACHELE © 2025 - Prohibida su reproducción sin autorización
       </p>
